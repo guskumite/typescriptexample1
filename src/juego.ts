@@ -16,9 +16,13 @@ export function setupJuego(element: HTMLButtonElement) {
       }
 
       if (attack > 0) {
-        resulElemento.textContent = `Los atacantes han ganado con ${atacantes} tropas restantes`;
+        if (resulElemento) {
+          resulElemento.textContent = `Los atacantes han ganado con ${atacantes} tropas restantes`;
+        }
       } else {
-        resulElemento.textContent = `Los defensores han ganado con ${defensores} tropas restantes`;
+        if (resulElemento) {
+          resulElemento.textContent = `Los defensores han ganado con ${defensores} tropas restantes`;
+        }
       }
     }
   };

@@ -23,12 +23,19 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
 const kuantos = document.querySelector<HTMLButtonElement>("#dibujar");
 
-kuantos?.addEventListener("click", () => {
-  const quantity = parseInt(
-    document.querySelector<HTMLInputElement>("#cuantos").value
-  );
-  setupCuadro(kuantos, quantity);
-});
+if (kuantos) {
+  let quantity = 0;
+  kuantos?.addEventListener("click", () => {
+    const protokuantos = document?.querySelector<HTMLInputElement>("#cuantos"!);
+    if (protokuantos) {
+      const prekuantos = protokuantos.value;
+      if (prekuantos) {
+        quantity = parseInt(prekuantos);
+      }
+    }
+    setupCuadro(quantity);
+  });
+}
 
 setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
 setupJuego(document.querySelector<HTMLButtonElement>("#resul")!);

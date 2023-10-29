@@ -1,5 +1,5 @@
-export function setupCuadro(element: HTMLButtonElement, cuantos: number) {
-  const cuadro = (quantity: number): void => {
+export function setupCuadro(cuantos: number) {
+  const cuadro = (): void => {
     const cuadroElement = document.querySelector<HTMLElement>("#cuadro");
     //initialize the drawing before drawing
     while (cuadroElement?.firstChild) {
@@ -42,5 +42,5 @@ export function setupCuadro(element: HTMLButtonElement, cuantos: number) {
     }
   };
 
-  return cuadro(cuantos);
+  return cuadro();
 }
